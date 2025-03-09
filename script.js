@@ -2,7 +2,7 @@ let model;
 
 // Cargar el modelo
 async function loadModel() {
-    model = await tf.loadLayersModel('https://raw.githubusercontent.com/JORF4R/iandoando/refs/heads/main/modelo_tfjs_model/model.json');
+    model = await tf.loadLayersModel('https://drive.google.com/uc?export=download&id=1NiH97fdmDl2dARvI3IxH4gAoBvZahVLb');
     console.log("Modelo cargado correctamente.");
 }
 
