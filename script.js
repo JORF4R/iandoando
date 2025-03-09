@@ -3,7 +3,7 @@ let model;
 // Cargar el modelo
 async function loadModel() {
     model = await tf.loadLayersModel('modelo_tfjs_model/model.json');
-    console.log("Modelo cargado.");
+    console.log("Modelo cargado correctamente.");
 }
 
 // Leer y preprocesar la imagen
