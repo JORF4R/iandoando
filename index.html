@@ -24,7 +24,17 @@
 
          async function loadModel() {
             model = await tf.loadLayersModel("modelo_tfjs_model/model.json");
-            console.log("Modelo cargado");
+            // Agregar una capa de entrada si falta
+    if (!model.inputs || model.inputs.length === 0) {
+        console.log("Agregando capa de entrada manualmente...");
+        const input = tf.input({shape: [9000]});  // Ajusta el tamaño
+        const newOutput = model.apply(input);
+        model = tf.model({inputs: input, outputs: newOutput});
+    }
+
+    console.log("Modelo cargado correctamente");
+    return model;
+}
         }
 
         document.getElementById("imageInput").addEventListener("change", async function(event) {
